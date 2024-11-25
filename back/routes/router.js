@@ -1,5 +1,5 @@
 import express from "express";
-import { sampleController } from "../controller/controller.js";
+import { userInfo } from "../controller/controller.js";
 const router = express.Router();
-router.get("/sample", sampleController);
+router.get("/user-info", userInfo);
 export default router;

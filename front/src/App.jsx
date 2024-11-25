@@ -1,8 +1,7 @@
-// src/App.jsx
-import React from "react";
 import { WeatherProvider } from "./WeatherContext"; //provider
 import DarkModeButton from "./components/DarkModeButton"
 import Weather from "./components/Weather"; 
+import UserInfo from "./components/UserInfo";
 import "./App.css"
 const App = () => {
   return (
@@ -10,6 +9,7 @@ const App = () => {
       <div className="App">
         <DarkModeButton/>
         <Weather />
+        <UserInfo/>
       </div>
     </WeatherProvider>
   );
