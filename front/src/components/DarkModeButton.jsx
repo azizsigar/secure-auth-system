@@ -1,26 +1,15 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import  { useContext } from "react";
+import { ThemeContext } from "../ThemeContext"; // ThemeContext'i import ediyoruz
 
-function DarkModeButton() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
+const DarkModeButton = () => {
+  // useContext ile ThemeContext'ten veriyi alıyoruz
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <div>
-      DarkModeButton
-      <button onClick={toggleTheme}>
-        Switch to {isDarkMode ? "Light" : "Dark"} Mode
-      </button>
-    </div>
+    <button onClick={toggleTheme}>
+      {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+    </button>
   );
-}
+};
 
 export default DarkModeButton;

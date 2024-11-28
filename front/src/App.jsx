@@ -1,17 +1,21 @@
 import { WeatherProvider } from "./WeatherContext"; //provider
 import DarkModeButton from "./components/DarkModeButton"
 import Weather from "./components/Weather"; 
-import UserInfo from "./components/UserInfo";
+import { ThemeProvider } from "./ThemeContext";
 import "./App.css"
 const App = () => {
   return (
+      <ThemeProvider>
     <WeatherProvider>
+
+
       <div className="App">
         <DarkModeButton/>
         <Weather />
-        <UserInfo/>
       </div>
+
     </WeatherProvider>
+      </ThemeProvider>
   );
 };
 

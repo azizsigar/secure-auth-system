@@ -1,5 +1,4 @@
-// src/WeatherContext.jsx
-import React, { createContext, useState, useEffect } from "react";
+import  { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 // Create a context for weather data

@@ -1,11 +1,9 @@
-// src/Weather.jsx
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import WeatherContext from "../WeatherContext"; // Import the WeatherContext
 
 const Weather = () => {
   const { city, setCity, weather, loading, error, fetchWeather } =
     useContext(WeatherContext);
-  // Function to handle the Search button click
   const handleSearch = () => {
     fetchWeather();
   };
