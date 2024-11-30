@@ -1,7 +1,5 @@
 import  { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
 
 // Create a context for weather data
 const WeatherContext = createContext();
@@ -12,7 +10,7 @@ export const WeatherProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const apiKey = import.meta.env.REACT_APP_APIKEY;
+  const apiKey = "19532d5437f317b05fd9159cf70fa398";
   
   // Fetch weather data based on the city
   const fetchWeather = async () => {
