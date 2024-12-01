@@ -1,12 +1,22 @@
-import { useContext, useState } from "react";
-import WeatherContext from "../WeatherContext"; // Import the WeatherContext
+import { useContext } from "react";
+import WeatherContext from "../WeatherContext";
 
 const Weather = () => {
-  const { city, setCity, weather, loading, error, fetchWeather } =
-    useContext(WeatherContext);
+  const {
+    city,
+    setCity,
+    weather,
+    loading,
+    error,
+    fetchWeather,
+    addLikedCountry,
+  } = useContext(WeatherContext);
 
   const handleSearch = () => {
     fetchWeather();
+    if (weather && weather.sys && weather.sys.country) {
+      addLikedCountry(weather.sys.country); // Add country to liked countries
+    }
   };
 
   return (
@@ -25,10 +35,9 @@ const Weather = () => {
       {weather && !loading && !error && (
         <div>
           <h2>{weather.name}</h2>
-          <p>121312{weather.weather[0].description}</p>
+          <p>{weather.weather[0].description}</p>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Humidity: {weather.main.humidity}%</p>
-          {/* You can add additional weather details here */}
           <p>Wind Speed: {weather.wind.speed} m/s</p>
         </div>
       )}

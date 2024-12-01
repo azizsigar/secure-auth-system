@@ -9,6 +9,7 @@ export const WeatherProvider = ({ children }) => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+const [likedCountries, setLikedCountries] = useState([]);
 
   const apiKey = "19532d5437f317b05fd9159cf70fa398";
   
@@ -28,6 +29,12 @@ export const WeatherProvider = ({ children }) => {
     }
   };
 
+   const addLikedCountry = (country) => {
+    if (country && !likedCountries.includes(country)) {
+      setLikedCountries((prev) => [...prev, country]);
+    }
+  };
+
   // Fetch weather data whenever the city changes
   useEffect(() => {
     fetchWeather();
@@ -42,6 +49,8 @@ export const WeatherProvider = ({ children }) => {
         loading,
         error,
         fetchWeather,
+        addLikedCountry, 
+                likedCountries,
       }}
     >
       {children}
