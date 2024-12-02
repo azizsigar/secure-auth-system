@@ -19,6 +19,22 @@ const Weather = () => {
     }
   };
 
+  // Helper function to get the emoji based on weather description
+  const getWeatherEmoji = (description) => {
+    if (description.toLowerCase().includes("cloud")) {
+      return "☁️"; // Cloudy weather emoji
+    } else if (description.toLowerCase().includes("clear")) {
+      return "☀️"; // Clear sky emoji
+    } else if (description.toLowerCase().includes("rain")) {
+      return "🌧️"; // Rainy weather emoji
+    } else if (description.toLowerCase().includes("snow")) {
+      return "❄️"; // Snowy weather emoji
+    } else if (description.toLowerCase().includes("thunder")) {
+      return "⚡"; // Thunderstorm emoji
+    }
+    return "🌥️"; // Default emoji for other weather
+  };
+
   return (
     <div>
       <h1>Weather App</h1>
@@ -35,7 +51,10 @@ const Weather = () => {
       {weather && !loading && !error && (
         <div>
           <h2>{weather.name}</h2>
-          <p>{weather.weather[0].description}</p>
+          <p>
+            {weather.weather[0].description}{" "}
+            {getWeatherEmoji(weather.weather[0].description)}
+          </p>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Humidity: {weather.main.humidity}%</p>
           <p>Wind Speed: {weather.wind.speed} m/s</p>

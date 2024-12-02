@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-// Create a context for weather data
 const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
