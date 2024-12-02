@@ -37,15 +37,25 @@ const Weather = () => {
 
   return (
     <div>
-      <h1>Weather App</h1>
-      <input
-        type="text"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        placeholder="Enter city name"
-      />
-      <button onClick={handleSearch}>Search</button>
+      <h3>Weather App</h3>
 
+      {/* Custom Input Field */}
+      <div className="input-container">
+        <input
+          className="input"
+          type="text"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          placeholder="Enter city name"
+        />
+      </div>
+
+      {/* Custom "Like" Button */}
+      <button className="shadow__btn" onClick={handleSearch}>
+        {loading ? "Searching..." : "Like this City"}
+      </button>
+
+      {/* Weather Information */}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {weather && !loading && !error && (

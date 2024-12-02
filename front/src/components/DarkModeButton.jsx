@@ -1,8 +1,7 @@
 import  { useContext } from "react";
-import { ThemeContext } from "../ThemeContext"; // ThemeContext'i import ediyoruz
+import { ThemeContext } from "../ThemeContext";
 
 const DarkModeButton = () => {
-  // useContext ile ThemeContext'ten veriyi alıyoruz
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   return (

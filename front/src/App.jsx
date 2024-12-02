@@ -12,6 +12,8 @@ const App = () => {
       <WeatherProvider>
         <Router>
           <div className="App">
+            <DarkModeButton />
+
             {/* Navbar */}
             <nav>
               <ul>
@@ -23,7 +25,6 @@ const App = () => {
                 </li>
               </ul>
               {/* Dark Mode Button */}
-              <DarkModeButton />
             </nav>
 
             {/* Routes */}

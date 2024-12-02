@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import WeatherContext from "../WeatherContext";
-
+import "../App.css"
 const LikedCountries = () => {
   const { likedCountries } = useContext(WeatherContext);
 
@@ -13,7 +13,7 @@ const LikedCountries = () => {
   }
 
   return (
-    <div>
+    <div className="App">
       <h2>Liked Countries</h2>
       <ul>
         {likedCountries.map((country, index) => (
