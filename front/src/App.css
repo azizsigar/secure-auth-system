@@ -11,6 +11,7 @@ html {
   transition:
     background-color 0.5s ease,
     color 0.5s ease;
+        font-family: 'Roboto Slab', serif;
 }
 
 html.dark {
@@ -26,6 +27,7 @@ html.dark {
   transition:
     background-color 0.5s ease,
     color 0.5s ease;
+        font-family: 'Roboto Slab', serif;
 }
 
 /* General input, button, and anchor link reset */
