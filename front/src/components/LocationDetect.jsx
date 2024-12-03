@@ -1,4 +1,3 @@
-// LocationDetect.js (Location Detection Component)
 import React, { useState, useEffect } from "react";
 
 const LocationDetect = ({ onLocationChange }) => {
@@ -9,7 +8,7 @@ const LocationDetect = ({ onLocationChange }) => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          onLocationChange(latitude, longitude); // Pass coordinates to parent component
+          onLocationChange(latitude, longitude);
         },
         (error) => {
           setLocationError("Unable to retrieve your location");

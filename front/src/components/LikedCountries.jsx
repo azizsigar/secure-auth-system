@@ -4,7 +4,6 @@ import "../App.css";
 const LikedCountries = () => {
   const { likedCountries } = useContext(WeatherContext);
 
-  // likedCountries'nin boş bir dizi olarak varsayılan değeri olduğunu kontrol edin
   if (!likedCountries) {
     console.error(
       "likedCountries is undefined or not provided by WeatherContext.",

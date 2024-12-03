@@ -1,9 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 
-// ThemeContext'i oluşturuyoruz
 export const ThemeContext = createContext();
 
-// ThemeProvider bileşeni
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
