@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { WeatherProvider } from "./WeatherContext";
+import { WeatherProvider } from "./context/WeatherContext";
 import Weather from "./components/Weather";
 import LikedCountries from "./components/LikedCountries";
 import DarkModeButton from "./components/DarkModeButton";
-import { ThemeProvider } from "./ThemeContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 
 const App = () => {

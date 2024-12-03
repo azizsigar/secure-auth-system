@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import WeatherContext from "../WeatherContext";
+import WeatherContext from "../context/WeatherContext";
+import WeatherEmoji from "./WeatherEmoji";
 
 const Weather = () => {
   const {
@@ -15,31 +16,16 @@ const Weather = () => {
   const handleSearch = () => {
     fetchWeather();
     if (weather && weather.sys && weather.sys.country) {
-      addLikedCountry(weather.sys.country); // Add country to liked countries
+      addLikedCountry(weather.sys.country);
     }
   };
 
-  // Helper function to get the emoji based on weather description
-  const getWeatherEmoji = (description) => {
-    if (description.toLowerCase().includes("cloud")) {
-      return "☁️"; // Cloudy weather emoji
-    } else if (description.toLowerCase().includes("clear")) {
-      return "☀️"; // Clear sky emoji
-    } else if (description.toLowerCase().includes("rain")) {
-      return "🌧️"; // Rainy weather emoji
-    } else if (description.toLowerCase().includes("snow")) {
-      return "❄️"; // Snowy weather emoji
-    } else if (description.toLowerCase().includes("thunder")) {
-      return "⚡"; // Thunderstorm emoji
-    }
-    return "🌥️"; // Default emoji for other weather
-  };
+ 
 
   return (
     <div>
       <h3>Weather App</h3>
 
-      {/* Custom Input Field */}
       <div className="input-container">
         <input
           className="input"
@@ -50,20 +36,17 @@ const Weather = () => {
         />
       </div>
 
-      {/* Custom "Like" Button */}
       <button className="shadow__btn" onClick={handleSearch}>
         {loading ? "Searching..." : "Like this City"}
       </button>
 
-      {/* Weather Information */}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {weather && !loading && !error && (
         <div>
-          <h2>{weather.name}</h2>
+          <WeatherEmoji/>
           <p>
-            {weather.weather[0].description}{" "}
-            {getWeatherEmoji(weather.weather[0].description)}
+            {weather.weather[0].description}
           </p>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Humidity: {weather.main.humidity}%</p>
