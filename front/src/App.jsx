@@ -1,4 +1,4 @@
-import { BrowserRouter as Router,Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { WeatherProvider } from "./context/WeatherContext";
 import DarkModeButton from "./components/DarkModeButton";
 import { ThemeProvider } from "./context/ThemeContext";

@@ -20,8 +20,6 @@ const Weather = () => {
     }
   };
 
- 
-
   return (
     <div>
       <h3>Weather App</h3>
@@ -44,10 +42,8 @@ const Weather = () => {
       {error && <p>{error}</p>}
       {weather && !loading && !error && (
         <div>
-          <WeatherEmoji/>
-          <p>
-            {weather.weather[0].description}
-          </p>
+          <WeatherEmoji />
+          <p>{weather.weather[0].description}</p>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Humidity: {weather.main.humidity}%</p>
           <p>Wind Speed: {weather.wind.speed} m/s</p>

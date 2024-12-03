@@ -8,7 +8,9 @@ html {
   gap: 1rem;
   margin: auto;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
 }
 
 html.dark {
@@ -21,7 +23,9 @@ html.dark {
   gap: 1rem;
   margin: auto;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
 }
 
 /* General input, button, and anchor link reset */
@@ -75,7 +79,9 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 /* Button hover state */

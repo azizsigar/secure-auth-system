@@ -19,7 +19,7 @@ export const WeatherProvider = ({ children }) => {
     setError("");
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`,
       );
       setWeather(response.data);
     } catch (err) {
@@ -46,10 +46,10 @@ export const WeatherProvider = ({ children }) => {
         },
         () => {
           setLocationError(
-            "Unable to retrieve your location. Using default city: London."
+            "Unable to retrieve your location. Using default city: London.",
           );
           setCity("London"); // Fallback to London if location access is denied
-        }
+        },
       );
     } else {
       alert("Geolocation is not supported by this browser.");
@@ -60,7 +60,7 @@ export const WeatherProvider = ({ children }) => {
   const fetchCityFromCoordinates = async (lat, lon) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`,
       );
       setCity(response.data.name); // Set the city name based on coordinates
     } catch (error) {
