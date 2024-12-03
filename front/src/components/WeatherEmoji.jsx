@@ -20,11 +20,11 @@ const { weather } = useContext(WeatherContext);
   };
     return (
       <div>
-        <h2>
+        <h5>
           {weather.name}
   
           {getWeatherEmoji(weather.weather[0].description)}
-        </h2>
+        </h5>
       </div>
     );
 }

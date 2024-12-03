@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router,Link } from "react-router-dom";
 import { WeatherProvider } from "./context/WeatherContext";
-import Weather from "./components/Weather";
-import LikedCountries from "./components/LikedCountries";
 import DarkModeButton from "./components/DarkModeButton";
 import { ThemeProvider } from "./context/ThemeContext";
+import AppRoutes from "./Routes/AppRoutes.jsx";
 import "./App.css";
 
 const App = () => {
@@ -24,14 +23,10 @@ const App = () => {
                   <Link to="/liked-countries">Liked Countries</Link>
                 </li>
               </ul>
-              {/* Dark Mode Button */}
             </nav>
 
             {/* Routes */}
-            <Routes>
-              <Route path="/" element={<Weather />} />
-              <Route path="/liked-countries" element={<LikedCountries />} />
-            </Routes>
+            <AppRoutes />
           </div>
         </Router>
       </WeatherProvider>
