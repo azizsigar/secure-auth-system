@@ -11,7 +11,7 @@ export const WeatherProvider = ({ children }) => {
   const [likedCountries, setLikedCountries] = useState([]);
   const [locationError, setLocationError] = useState(null);
 
-  const apiKey = "19532d5437f317b05fd9159cf70fa398";
+  const apiKey = import.meta.env.WEATHER_API_KEY;
 
   const fetchWeather = async () => {
     setLoading(true);
